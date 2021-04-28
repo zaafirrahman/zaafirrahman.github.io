@@ -2,7 +2,9 @@
 <html>
 
 <head>
-<title>Food Entalpy Calculator</title>
+<title>
+Food Entalpy Calculator
+</title>
 <style type="text/css">
 html{
     background: linear-gradient(to right bottom, #FF6600, #FF9900);
@@ -83,7 +85,7 @@ function heatcalculator() {
 		// Fixing upto 2 decimal places
 		let heat = (1674.72*fat/100 + 837.36*solidnonfat/100 + 4186.8*moisture/100).toFixed(2);
 
-	result.innerHTML = `Material heat specific : <span>${heat}</span> J/KgK`;
+	result.innerHTML = `Food heat specific : <span>${heat}</span> J/KgK`;
 
 	}
 }
