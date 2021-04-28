@@ -2,14 +2,97 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
-	<!-- Include JS files -->
-	<script src="script.js"></script>
+<title>Food Entalpy Calculator</title>
+<style type="text/css">
+html{
+    background: linear-gradient(to right bottom, #FF6600, #FF9900);
+  font-family: 'Lato', sans-serif;
+    color: white;
+    padding:30px;
+}
+.box{
+    border-radius: 10px;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    background: linear-gradient(to right bottom, #FF6600, #FF9900);
+}
+.text1{
+    font-size: 25px; 
+    padding:65px 110px;
+    float: left;
+    font-weight: bold;
+}
+input{
+    display: block;
+    box-sizing: border-box;
+    width: 350px;
+    border-bottom: 4px solid #FF9900;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    transition-delay: 0.3s;
+    transition-duration: .5s;
+    
+}
+input:focus{
+    outline: none;
+
+    border-bottom: 4px solid rgb(0, 0, 0);
+}
+.inputs{
+    float: left;
+    padding:120px;
+    position: absolute;
+    left: 220px;
+</style>
+
+<script>
+window.onload = () => {
+	let button = document.querySelector("#btn");
+
+	button.addEventListener("click", heatcalculator);
+};
+
+function heatcalculator() {
+
+	let fat = parseInt(document
+			.querySelector("#fat").value);
+
+	let solidnonfat = parseInt(document
+			.querySelector("#solidnonfat").value);
+
+        let moisture = parseInt(document
+			.querySelector("#moisture").value);
+
+	let result = document.querySelector("#result");
+
+	if (fat === "" || isNaN(fat))
+		result.innerHTML = "Provide a valid Fat Percentage!";
+
+	else if (solidnonfat === "" || isNaN(solidnonfat))
+		result.innerHTML = "Provide a valid Solid Non Fat Percentage!";
+
+        else if (moisture === "" || isNaN(moisture))
+		result.innerHTML = "Provide a valid Moisture Percentage!";
+
+	else {
+
+		// Fixing upto 2 decimal places
+		let heat = (1674.72*fat/100 + 837.36*solidnonfat/100 + 4186.8*moisture/100).toFixed(2);
+
+	result.innerHTML = `Material heat specific : <span>${heat}</span> J/KgK`;
+
+	}
+}
+</script>
 </head>
 
 <body>
 	<div class="container">
-		<h1>Food Heat Specific</h1>
+		<h1>Food Entalpy</h1>
 		<h1>Calculator (J/KgK)</h1>
 
 		<p>Fat Percentage</p>
