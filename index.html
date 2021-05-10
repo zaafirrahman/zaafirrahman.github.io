@@ -22,11 +22,11 @@
 <style type="text/css">
 html {
   font-family: "Open Sans", sans-serif;
-  background: whitesmoke;
+  background: black;
 }
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 hr {
   background: grey;
@@ -60,7 +60,7 @@ hr {
   position: relative;
   width: 120px;
   height: 120px;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 #image > a {
   position: absolute;
@@ -94,8 +94,10 @@ hr {
   padding: 0 !important;
 }
 #name,
+#designation,
 #about > p {
   font-weight: bolder;
+  color : white;
   font-family: "Open Sans", sans-serif;
 }
 #email {
@@ -111,12 +113,12 @@ hr {
 #telephone,
 #born,
 #fax {
-  color: #555;
+  color: #b5b5b5;
   font-size: 13.5px;
 }
 strong,
 span {
-  color: black;
+  color: white;
   font-size: 14px;
 }
 #social-links,
@@ -139,7 +141,7 @@ span {
 }
 .fab,
 .fas {
-  color: whitesmoke;
+  color: black;
 }
 #about > a {
   top: 4px;
@@ -155,7 +157,7 @@ span {
   font-size: 15px !important;
 }
 .stroke-transparent {
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 1px #fff;
   -webkit-text-fill-color: transparent;
 }
 .blue {
@@ -167,14 +169,14 @@ span {
   -webkit-text-fill-color: transparent;
 }
 .card {
-  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
   overflow-x: hidden;
   margin-bottom: 30px;
   padding: 15px 30px 30px 30px;
-  background-color: #fff;
+  background-color: #242526;
+  border-radius : 15px;
 }
 .card > p {
-  color: #0e141e;
+  color: #fff;
   font-weight: bolder;
   font-size: 18px;
   line-height: 2;
@@ -200,6 +202,7 @@ span {
 }
 .tags {
   font-size: 17px;
+  color : white;
   font-weight: bolder;
 }
 .tags ~ a {
@@ -208,10 +211,10 @@ span {
 .tags span {
   font-size: 14px;
   font-weight: normal;
-  color: #0e141e;
+  color: #fff;
 }
 .tags span span {
-  color: #738f93;
+  color: #b5b5b5;
 }
 @media screen and (max-width: 1090px) {
   #profile {
@@ -257,7 +260,7 @@ span {
           >
         </p>
         <p id="designation">
-          <b>Reach me at</b> :<br />
+          <b>Find me at</b> :<br />
         </p>
         <div id="social-links">
           <a href="https://www.instagram.com/zaa__r/" target="_blank"><i class="fab fa-instagram stroke-transparent"></i></a
