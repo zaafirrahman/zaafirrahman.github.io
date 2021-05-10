@@ -1,118 +1,397 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-<head>
-<title>
-Food Entalpy Calculator
-</title>
+    <link rel="shortcut icon" href="https://www.defender.com/images/B_LETTERS_z.jpg">
+
+    <!-- =========== CDN FONT AWESOME =========== -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    ></link>
+
+    <title>Web CV Aulya Az Zaafirrahman</title>
+
 <style type="text/css">
-html{
-    background: linear-gradient(to right bottom, #000000, #FF9900);
-  font-family: 'Lato', sans-serif;
-    color: white;
-    padding:30px;
+html {
+  font-family: "Open Sans", sans-serif;
+  background: whitesmoke;
 }
-.box{
-    border-radius: 10px;
-    width: 800px;
-    height: 500px;
-    margin: 0 auto;
-    background: linear-gradient(to right bottom, #FF6600, #FF9900);
+a {
+  text-decoration: none;
+  color: black;
 }
-.text1{
-    font-size: 25px; 
-    padding:65px 110px;
-    float: left;
-    font-weight: bold;
+hr {
+  background: grey;
 }
-input{
+#container {
+  position: relative;
+  display: flex;
+}
+#profile {
+  flex: 15%;
+  display: block;
+  position: relative;
+  margin: 5% 2% 0 10%;
+  width: 100%;
+  height: 100%;
+}
+#info-cards {
+  flex: 55%;
+  display: block;
+  margin-top: 5%;
+  margin-right: 10%;
+  width: 100%;
+  height: 100%;
+}
+#image {
+  position: relative;
+  overflow: hidden;
+}
+#image,
+#profile-photo {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+#image > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5) !important;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+#image > a > i {
+  -webkit-text-stroke: 1px #ffffffdd;
+  padding: 40%;
+}
+#image:hover a {
+  display: block;
+}
+#name {
+  font-size: 23px !important;
+  line-height: 20px !important;
+}
+#about,
+.card > ul > li {
+  padding: 0 0 0 15px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+#about {
+  font-size: 20px !important;
+  padding: 0 !important;
+}
+#name,
+#about > p {
+  font-weight: bolder;
+  font-family: "Open Sans", sans-serif;
+}
+#email {
+  font-size: 15px !important;
+  font-weight: bold !important;
+  font-family: "Cutive Mono", monospace;
+}
+#college,
+#email,
+#year-graduation,
+#education,
+#more-about,
+#telephone,
+#born,
+#fax {
+  color: #555;
+  font-size: 13.5px;
+}
+strong,
+span {
+  color: black;
+  font-size: 14px;
+}
+#social-links,
+#about {
+  display: inline-block;
+}
+#social-links {
+  margin-bottom: 12px;
+}
+#social-links a {
+  margin: 0 10px;
+}
+#edit-intro {
+  display: block;
+  color: #097bbf;
+  font-family: "Nunito", sans-serif;
+}
+.fab {
+  font-size: 1.1em;
+}
+.fab,
+.fas {
+  color: whitesmoke;
+}
+#about > a {
+  top: 4px;
+  right: 8px;
+}
+.edit {
+  top: 19px;
+  right: 10px;
+}
+#about > a,
+.edit {
+  position: absolute;
+  font-size: 15px !important;
+}
+.stroke-transparent {
+  -webkit-text-stroke: 1px #000;
+  -webkit-text-fill-color: transparent;
+}
+.blue {
+  color: #097bbf !important;
+  font-size: 13px;
+}
+.stroke-transparent-blue {
+  -webkit-text-stroke: 1px #097bbf;
+  -webkit-text-fill-color: transparent;
+}
+.card {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+  margin-bottom: 30px;
+  padding: 15px 30px 30px 30px;
+  background-color: #fff;
+}
+.card > p {
+  color: #0e141e;
+  font-weight: bolder;
+  font-size: 18px;
+  line-height: 2;
+}
+.card > p > i {
+  font-size: 18px;
+}
+.card > a {
+  font-weight: 400;
+  font-size: 15px;
+  margin: 0;
+  margin-left: 25px;
+  padding: 0;
+  border: 0;
+  height: auto;
+  background: transparent;
+  color: #097bbf;
+  outline: none;
+  cursor: pointer;
+}
+.card > ul {
+  list-style-type: none;
+}
+.tags {
+  font-size: 17px;
+  font-weight: bolder;
+}
+.tags ~ a {
+  display: none !important;
+}
+.tags span {
+  font-size: 14px;
+  font-weight: normal;
+  color: #0e141e;
+}
+.tags span span {
+  color: #738f93;
+}
+@media screen and (max-width: 1090px) {
+  #profile {
+    margin-left: 5%;
+  }
+}
+@media screen and (max-width: 850px) {
+  #container {
     display: block;
-    box-sizing: border-box;
-    width: 350px;
-    border-bottom: 4px solid #FF9900;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    padding: 10px;
-    margin-bottom: 15px;
-    transition-delay: 0.3s;
-    transition-duration: .5s;
-    
+  }
+  #profile {
+    width: 90%;
+  }
+  .card {
+    margin: 0 5%;
+    margin-bottom: 30px;
+  }
 }
-input:focus{
-    outline: none;
-
-    border-bottom: 4px solid rgb(0, 0, 0);
-}
-.inputs{
-    float: left;
-    padding:120px;
-    position: absolute;
-    left: 220px;
 </style>
 
+  </head>
+
+  <body>
+    <div id="container">
+      <!-- =========== PROFILE SIDE BAR =========== -->
+      <div id="profile">
+        <div id="image">
+          <img
+            id="profile-photo"
+            src="https://media-exp1.licdn.com/dms/image/C5603AQHJ6K4GJhVRDg/profile-displayphoto-shrink_200_200/0/1597490919927?e=1622678400&v=beta&t=ac-fkP7aZwYqG7flJlisVjNm1Qv_MJ0ncaYTIX0gUHs"
+            alt="Profile-Image"
+          />
+          <a href="#"><i class="fas fa-pen stroke-transparent"></i></a>
+        </div>
+        <p id="name">
+          Aulya Az Zaafirrahman<br /><span id="email"
+            >zaafir123rahman@gmail.com</span
+          >
+        </p>
+        <p id="designation">
+          <b>Student</b><br /><span id="college"
+            >Brawijaya University</span
+          >
+        </p>
+        <p id="designation">
+          <b>Reach me at</b> :<br />
+        </p>
+        <div id="social-links">
+          <a href="https://www.instagram.com/zaa__r/" target="_blank"><i class="fab fa-instagram stroke-transparent"></i></a
+          ><a href="https://twitter.com/feinstehaar" target="_blank"><i class="fab fa-twitter stroke-transparent"></i></a
+          ><a href="https://www.linkedin.com/in/zaafir-rahman-b92825178/" target="_blank"><i class="fab fa-linkedin-in stroke-transparent"></i></a
+          ><a href="https://github.com/zaafirrahman" target="_blank"><i class="fab fa-github stroke-transparent"></i></a
+          ><a href="https://line.me/ti/p/0n0yKlXTxI" target="_blank"><i class="fab fa-line stroke-transparent"></i></a
+	  ><a href="https://zaafirrahman.medium.com/" target="_blank"><i class="fab fa-medium-m stroke-transparent"></i></a>
+        </div>
+        <!-- =========== ABOUT =========== -->
+        <hr width="100%" />
+
+        <p id="born">
+          Born<br /><strong
+            >Bogor, 08 September 2002</strong
+          >
+        </p>
+        <p id="more-about">
+          Address<br /><span
+            ><b>Graha Tanjung Sari Blok G No. 23, Jl. Setia Budi Pasar 2, Tanjung Sari, Medan Selayang, Kota Medan 20132</b></span
+          >
+        </p>
+        <p id="education">
+          Education<br /><strong
+            >Agroindustrial Engineering</strong
+          >
+        </p>
+        <p id="telephone">Phone & WhatsApp<br /><strong>+62 81584824947</strong></p>
+      </div>
+
+      <!-- =========== CARD =========== -->
+      <div id="info-cards">
+
+        <!-- =========== CARD EDUCATIONAL BACKGROUND =========== -->
+        <div class="card" >
+          <p>
+            <i class="fas fa-graduation-cap stroke-transparent"></i>&nbsp;&nbsp;&nbsp;Educational Background
+          </p>
+          <ul>
+            <li>
+              <p class="tags">
+                Al-Fityan School Medan<br /><span
+                  >Elementary School | <span>2008 - 2014</span></span
+                >
+              </p>
+              <p class="tags">
+		Nurul Fikri Boarding School Serang<br /><span
+                  >Junior High School | <span>2014 - 2017</span></span
+                >
+              </p>
+              <p class="tags">
+		Nurul Fikri Boarding School Serang<br /><span
+                  >Senior High School | <span>2017 - 2020</span></span
+                >
+              </p>
+              <p class="tags">
+		Brawijaya University Malang<br /><span
+                  >College | <span>2020 - now</span></span
+                >
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- =========== CARD ACHIEVEMENT =========== -->
+        <div class="card">
+          <p>
+            <i class="fas fa-trophy stroke-transparent"></i
+            >&nbsp;&nbsp;&nbsp;Achievement
+          </p>
+          <ul id="listExperience">
+            <li>
+              <p class="tags">
+                1st Place in Kompetisi Sains Madrasah, General Biology Olympiad<br /><span
+                  >Serang District | <span>2019</span></span
+                >
+              </p>
+              <p class="tags">
+                3rd Place in Jakarta Pencak Silat Championship, Sparing Competition <br /><span
+                  >Indonesia | <span>2019</span></span
+                >
+              </p>
+              <p class="tags">
+                1st Place in PORSIQU JSIT, Basketball Competition <br /><span
+                  >Banten Province | <span>2018</span></span
+                >
+              </p>
+              <p class="tags">
+                1st Place in NF Expo and Science Fair, Scientific Journal Competition <br /><span
+                  >Nurul Fikri Serang | <span>2017</span></span
+                >
+              </p>
+            </li>
+          </ul>
+        </div>
+
+    <!-- =========== SCRIPT JS =========== -->
 <script>
-window.onload = () => {
-	let button = document.querySelector("#btn");
+let listExperience = document.querySelector("#listExperience");
 
-	button.addEventListener("click", heatcalculator);
+let dataExperience = [
+  {
+    title: "Mentor",
+    desc: "ngajar",
+  },
+];
+const addExperience = (event) => {
+  event.preventDefault();
+
+  let messageTitle = prompt("Tambahkan pekerjaan anda");
+  let messageDesc = prompt("Tambahkan deskripsi pekerjaan anda");
+
+  let newData = {
+    title: messageTitle,
+    desc: messageDesc,
+  };
+
+  dataExperience.push(newData);
+
+  newData = {
+    title: "",
+    desc: "",
+  };
+
+  dataExperience.map((item) => {
+    let displayList = document.createElement("li");
+    let displayTitle = document.createElement("p");
+
+    // tampilkan <p></p>
+    displayTitle.innerHTML = `<p class="tags">${item.title}<br /><span>${item.desc} </span><span>January, 2019 - now</span></span></p>`;
+    displayList.appendChild(displayTitle);
+    listExperience.appendChild(displayList);
+  });
 };
-
-function heatcalculator() {
-
-	let fat = parseInt(document
-			.querySelector("#fat").value);
-
-	let solidnonfat = parseInt(document
-			.querySelector("#solidnonfat").value);
-
-        let moisture = parseInt(document
-			.querySelector("#moisture").value);
-
-	let result = document.querySelector("#result");
-
-	if (fat === "" || isNaN(fat))
-		result.innerHTML = "Provide a valid Fat Percentage!";
-
-	else if (solidnonfat === "" || isNaN(solidnonfat))
-		result.innerHTML = "Provide a valid Solid Non Fat Percentage!";
-
-        else if (moisture === "" || isNaN(moisture))
-		result.innerHTML = "Provide a valid Moisture Percentage!";
-
-	else {
-
-		// Fixing upto 2 decimal places
-		let heat = (1674.72*fat/100 + 837.36*solidnonfat/100 + 4186.8*moisture/100).toFixed(2);
-
-	result.innerHTML = `Food heat specific : <span>${heat}</span> J/KgK`;
-
-	}
-}
 </script>
-</head>
-
-<body>
-	<div class="container">
-		<h1>Food Entalpy</h1>
-		<h1>Calculator (J/KgK)</h1>
-
-		<p>Fat Percentage</p>
-
-		<input type="text" id="fat">
-
-		<p>Solid Non Fat Percentage</p>
-
-		<input type="text" id="solidnonfat">
-
-                <p>Moisture Percentage</p>
-
-		<input type="text" id="moisture">
-
-		<button id="btn">Calculate</button>
-
-		<div id="result"></div>
-	</div>
-</body>
-
+  </body>
 </html>
