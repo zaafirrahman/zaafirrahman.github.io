@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S1 Thesis — Aulya Az Zaafirrahman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/zaa.png">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#0d0f0e; --bg2:#131614; --bg3:#1a1d1b;
+    --border:rgba(255,255,255,0.07); --border2:rgba(255,255,255,0.13);
+    --text:#e8e6e1; --muted:#7a7870; --muted2:#5a5850;
+    --accent:#f0b849; --accent2:#d49a30;
+    --accent-bg:rgba(240,184,73,0.07); --accent-border:rgba(240,184,73,0.22);
+    --mono:'DM Mono',monospace; --display:'Syne',sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background:var(--bg); color:var(--text); font-family:var(--mono); font-size:13px; line-height:1.7; min-height:100vh; overflow-x:hidden; }
+  body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(rgba(255,255,255,0.014) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.014) 1px,transparent 1px); background-size:40px 40px; pointer-events:none; z-index:0; }
+  body::after { content:''; position:fixed; top:-200px; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle,rgba(240,184,73,0.05) 0%,transparent 70%); pointer-events:none; z-index:0; }
+
+  .container { position:relative; z-index:1; max-width:680px; margin:0 auto; padding:60px 32px 100px; }
+
+  /* BACK */
+  .back-link { display:inline-flex; align-items:center; gap:8px; font-size:11px; color:var(--muted); text-decoration:none; letter-spacing:0.06em; margin-bottom:48px; transition:color 0.2s; }
+  .back-link:hover { color:var(--accent); }
+
+  /* HERO */
+  .hero { margin-bottom:56px; padding-bottom:48px; border-bottom:1px solid var(--border); animation:fadeUp 0.6s ease both; }
+  .hero-label { font-size:10px; color:var(--accent); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:12px; display:flex; align-items:center; gap:10px; }
+  .hero-label::after { content:''; flex:1; height:1px; background:var(--accent-border); }
+  .hero-title { font-family:var(--display); font-size:clamp(22px,4vw,36px); font-weight:800; color:var(--text); line-height:1.1; letter-spacing:-0.02em; margin-bottom:6px; }
+  .hero-title span { color:var(--accent); }
+  .hero-subtitle { font-size:12px; color:var(--muted); line-height:1.8; margin-bottom:20px; max-width:560px; }
+  .hero-meta { display:flex; gap:16px; flex-wrap:wrap; }
+  .hero-tag { font-size:10px; color:var(--muted2); background:var(--bg2); border:1px solid var(--border); padding:4px 10px; border-radius:2px; letter-spacing:0.06em; }
+
+  /* STATS */
+  .stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:4px; overflow:hidden; margin-bottom:48px; animation:fadeUp 0.6s ease 0.1s both; }
+  .stat-cell { background:var(--bg2); padding:16px 14px; text-align:center; }
+  .stat-val { font-family:var(--display); font-size:20px; font-weight:700; color:var(--accent); margin-bottom:3px; }
+  .stat-lbl { font-size:10px; color:var(--muted2); text-transform:uppercase; letter-spacing:0.08em; }
+
+  /* SECTION */
+  .section { margin-bottom:48px; animation:fadeUp 0.6s ease both; }
+  .section:nth-child(3){animation-delay:0.15s} .section:nth-child(4){animation-delay:0.2s} .section:nth-child(5){animation-delay:0.25s} .section:nth-child(6){animation-delay:0.3s}
+  .section-label { font-size:10px; color:var(--accent); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+  .section-label::after { content:''; flex:1; height:1px; background:var(--border); }
+
+  /* LINKS GRID */
+  .links-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+  .link-card { background:var(--bg2); border:1px solid var(--border); border-radius:4px; padding:18px 20px; text-decoration:none; color:inherit; transition:all 0.2s; display:flex; align-items:flex-start; gap:14px; }
+  .link-card:hover { border-color:var(--accent-border); background:var(--bg3); transform:translateY(-1px); }
+  .link-card.primary { border-color:var(--accent-border); }
+  .link-card.primary:hover { border-color:var(--accent); }
+  .link-icon { font-size:20px; line-height:1; flex-shrink:0; margin-top:1px; opacity:0.8; }
+  .link-name { font-family:var(--display); font-size:14px; font-weight:600; color:var(--text); margin-bottom:3px; }
+  .link-desc { font-size:11px; color:var(--muted); line-height:1.5; }
+  .link-arrow { margin-left:auto; font-size:13px; color:var(--accent); opacity:0; transition:opacity 0.2s; padding-top:1px; flex-shrink:0; }
+  .link-card:hover .link-arrow { opacity:1; }
+
+  /* ABSTRACT */
+  .abstract-box { background:var(--bg2); border:1px solid var(--border); border-radius:4px; padding:20px 22px; }
+  .abstract-box p { font-size:12px; color:var(--muted); line-height:1.9; }
+
+  /* TECH STACK */
+  .tech-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .tech-group { background:var(--bg2); border:1px solid var(--border); border-radius:4px; padding:14px 16px; }
+  .tech-label { font-size:10px; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:8px; }
+  .tech-tags { display:flex; flex-wrap:wrap; gap:5px; }
+  .tech-tag { font-size:11px; color:var(--muted); background:var(--bg3); border:1px solid var(--border); padding:2px 7px; border-radius:2px; }
+
+  /* FOOTER */
+  footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; font-size:11px; color:var(--muted2); }
+  footer a { color:var(--muted); text-decoration:none; transition:color 0.2s; }
+  footer a:hover { color:var(--accent); }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+
+  @media (max-width:560px) {
+    .container{padding:40px 20px 80px}
+    .stats-row{grid-template-columns:repeat(2,1fr)}
+    .links-grid{grid-template-columns:1fr}
+    .tech-grid{grid-template-columns:1fr}
+    footer{flex-direction:column;gap:8px;text-align:center}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <a href="https://zaafirrahman.github.io/" class="back-link">← Back to CV</a>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Undergraduate Thesis · Brawijaya University · 2024</div>
+    <h1 class="hero-title">CoffeeBean<br><span>Quality Classifier</span></h1>
+    <p class="hero-subtitle">
+      Klasifikasi Mutu Biji Kopi Arabika Berbasis Image Processing Menggunakan Metode Vision Transformer (ViT-B/16) — 
+      sebuah sistem klasifikasi mutu kopi berbasis standar SNI yang berjalan sepenuhnya di browser tanpa server.
+    </p>
+    <div class="hero-meta">
+      <span class="hero-tag">Vision Transformer B/16</span>
+      <span class="hero-tag">ImageNet-21k Pretrained</span>
+      <span class="hero-tag">SNI 01-2907-2008</span>
+      <span class="hero-tag">6 Mutu Classes</span>
+      <span class="hero-tag">100% Client-side</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-cell"><div class="stat-val">91.67%</div><div class="stat-lbl">Accuracy</div></div>
+    <div class="stat-cell"><div class="stat-val">70:30</div><div class="stat-lbl">Train / Test</div></div>
+    <div class="stat-cell"><div class="stat-val">+5%</div><div class="stat-lbl">vs MobileNetV2</div></div>
+    <div class="stat-cell"><div class="stat-val">ONNX</div><div class="stat-lbl">Deployment</div></div>
+  </div>
+
+  <!-- RESOURCES -->
+  <div class="section">
+    <div class="section-label">Resources</div>
+    <div class="links-grid">
+      <a href="https://zaafirrahman.github.io/coffeebean_quality_vit/" target="_blank" class="link-card primary">
+        <div class="link-icon">🚀</div>
+        <div>
+          <div class="link-name">Live Demo</div>
+          <div class="link-desc">Classify your own Arabica bean photo directly in the browser</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </a>
+      <a href="https://drive.google.com/file/d/1AZ4dBFsXksDHUzlBiZqhjl4loA9niGeI/view?usp=sharing" target="_blank" class="link-card">
+        <div class="link-icon">📄</div>
+        <div>
+          <div class="link-name">Naskah Skripsi</div>
+          <div class="link-desc">Full thesis document — methodology, analysis, and conclusions</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </a>
+      <a href="https://drive.google.com/file/d/1qw2GzvVHjpTAHKfMsFyGeTK70wEn12Ez/view?usp=sharing" target="_blank" class="link-card">
+        <div class="link-icon">📰</div>
+        <div>
+          <div class="link-name">Artikel Jurnal</div>
+          <div class="link-desc">Condensed academic article version of the research</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </a>
+      <a href="https://drive.google.com/file/d/1jdNKr-4M9z2bHO20D9BCxRZgxwgeAYkn/view?usp=sharing" target="_blank" class="link-card">
+        <div class="link-icon">🗂️</div>
+        <div>
+          <div class="link-name">Poster</div>
+          <div class="link-desc">Visual summary poster of the research findings</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </a>
+      <a href="https://drive.google.com/file/d/1yRDYCPl9I-HQeD8JlvA1OCRWNiFb2ZTZ/view?usp=sharing" target="_blank" class="link-card">
+        <div class="link-icon">📋</div>
+        <div>
+          <div class="link-name">SNI Kopi Reference</div>
+          <div class="link-desc">SNI 01-2907-2008 standard used as the grading basis</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </a>
+      <a href="https://github.com/zaafirrahman/coffeebean_quality_vit" target="_blank" class="link-card">
+        <div class="link-icon">💻</div>
+        <div>
+          <div class="link-name">GitHub</div>
+          <div class="link-desc">Full source code, training curves, and experiment results</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </a>
+      <a href="https://huggingface.co/zaafirrahman/coffeebean-quality-vit" target="_blank" class="link-card">
+        <div class="link-icon">🤗</div>
+        <div>
+          <div class="link-name">HuggingFace Hub</div>
+          <div class="link-desc">Trained model weights and model card</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </a>
+      <a href="https://www.kaggle.com/datasets/zaafirrahman/arabica-beans" target="_blank" class="link-card">
+        <div class="link-icon">📊</div>
+        <div>
+          <div class="link-name">Kaggle Dataset</div>
+          <div class="link-desc">Arabica bean image dataset used for training and testing</div>
+        </div>
+        <div class="link-arrow">→</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ABSTRACT -->
+  <div class="section">
+    <div class="section-label">Abstract</div>
+    <div class="abstract-box">
+      <p>
+        Penelitian ini mengembangkan sistem klasifikasi mutu biji kopi Arabika berbasis image processing
+        menggunakan metode Vision Transformer (ViT-B/16) yang di-pretrain pada ImageNet-21k dan
+        di-fine-tune pada dataset biji kopi Arabika. Sistem mengklasifikasikan mutu berdasarkan
+        standar SNI 01-2907-2008 ke dalam 6 kelas mutu.
+        Model mencapai akurasi 91.67% dengan rasio train:test 70:30, melampaui baseline MobileNetV2
+        sebesar 5%. Model diekspor ke format ONNX dan di-deploy sebagai aplikasi web yang berjalan
+        sepenuhnya di sisi klien tanpa memerlukan server backend.
+      </p>
+    </div>
+  </div>
+
+  <!-- TECH STACK -->
+  <div class="section">
+    <div class="section-label">Tech Stack</div>
+    <div class="tech-grid">
+      <div class="tech-group">
+        <div class="tech-label">Model</div>
+        <div class="tech-tags">
+          <span class="tech-tag">PyTorch</span><span class="tech-tag">ViT-B/16</span><span class="tech-tag">HuggingFace</span><span class="tech-tag">ONNX</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <div class="tech-label">Data</div>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span><span class="tech-tag">Pandas</span><span class="tech-tag">NumPy</span><span class="tech-tag">Kaggle</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <div class="tech-label">Deployment</div>
+        <div class="tech-tags">
+          <span class="tech-tag">HTML/CSS/JS</span><span class="tech-tag">ONNX Runtime</span><span class="tech-tag">GitHub Pages</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Aulya Az Zaafirrahman · Agroindustrial Engineering · Brawijaya University · 2024</span>
+    <a href="https://zaafirrahman.github.io/">← CV</a>
+  </footer>
+
+</div>
+</body>
+</html>
