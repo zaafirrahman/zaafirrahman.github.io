@@ -44,7 +44,7 @@
 
   /* SECTIONS */
   .section { margin-bottom:32px; animation:fadeUp 0.6s ease both; }
-  .section:nth-child(2){animation-delay:0.08s} .section:nth-child(3){animation-delay:0.13s} .section:nth-child(4){animation-delay:0.18s} .section:nth-child(5){animation-delay:0.23s} .section:nth-child(6){animation-delay:0.28s} .section:nth-child(7){animation-delay:0.33s} .section:nth-child(8){animation-delay:0.36s} .section:nth-child(9){animation-delay:0.39s} .section:nth-child(10){animation-delay:0.42s}
+  .section:nth-child(2){animation-delay:0.08s} .section:nth-child(3){animation-delay:0.13s} .section:nth-child(4){animation-delay:0.18s} .section:nth-child(5){animation-delay:0.23s} .section:nth-child(6){animation-delay:0.28s} .section:nth-child(7){animation-delay:0.33s} .section:nth-child(8){animation-delay:0.36s} .section:nth-child(9){animation-delay:0.39s} .section:nth-child(10){animation-delay:0.42s} .section:nth-child(11){animation-delay:0.45s}
   .section-header { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
   .section-tag { font-size:10px; color:var(--accent); letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap; }
   .section-line { flex:1; height:1px; background:var(--border); }
@@ -115,6 +115,17 @@
   .achievement-name { font-size:13px; color:var(--text); margin-bottom:3px; line-height:1.4; }
   .achievement-scope { font-size:11px; color:var(--muted); }
 
+  /* CERTIFICATIONS */
+  .cert-list { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+  .cert-item { display:flex; flex-direction:column; align-items:flex-start; gap:8px; background:var(--bg2); border:1px solid var(--border); border-radius:4px; padding:18px 20px; text-decoration:none; color:inherit; transition:all 0.2s ease; }
+  .cert-item:hover { border-color:var(--accent-border); background:var(--bg3); transform:translateY(-2px); }
+  .cert-icon { width:40px; height:40px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:var(--accent-bg); border:1px solid var(--accent-border); border-radius:4px; margin-bottom:4px; }
+  .cert-icon svg { width:20px; height:20px; color:var(--accent); }
+  .cert-content { display:flex; flex-direction:column; gap:3px; min-width:0; }
+  .cert-name { font-family:var(--display); font-size:14px; font-weight:600; color:var(--text); line-height:1.3; }
+  .cert-issuer { font-size:10px; color:var(--muted2); letter-spacing:0.05em; }
+  .cert-detail { font-size:11px; color:var(--muted); }
+
   /* FEATURED */
   .featured-projects-stack { display:flex; flex-direction:column; gap:16px; }
   .featured-project { background:var(--bg2); border:1px solid var(--accent-border); border-radius:4px; padding:24px 28px; position:relative; overflow:hidden; }
@@ -170,6 +181,7 @@
     .info-grid{grid-template-columns:1fr}
     .skills-grid{grid-template-columns:1fr}
     .projects-grid{grid-template-columns:1fr}
+    .cert-list{grid-template-columns:1fr}
     .work-header{flex-direction:column;gap:2px}
     footer{flex-direction:column;gap:8px;text-align:center}
   }
@@ -402,20 +414,52 @@
         <div class="achievement-rank rank-gold">1st</div>
         <div><div class="achievement-name">NF Expo and Science Fair — Scientific Journal Competition</div><div class="achievement-scope">Nurul Fikri Serang · 2019</div></div>
       </a>
-      <a href="https://drive.google.com/file/d/1P76gBuR7HKLz2As93rX1FOHszj_0nggx/view?usp=sharing" target="_blank" class="achievement-item">
-        <div class="achievement-rank rank-gold">1st</div>
-        <div><div class="achievement-name">PORSIQU JSIT — Basketball Competition</div><div class="achievement-scope">Banten Province · 2018</div></div>
-      </a>
-      <a href="https://drive.google.com/file/d/1xj3lBszo26v5SO21rwNwXfbwAoxV7yuh/view?usp=sharing" target="_blank" class="achievement-item">
+      <a href="https://drive.google.com/file/d/1WHM1dSkmBj2b9H1CQb5LtMpGoOyaT59Q/view?usp=sharing" target="_blank" class="achievement-item">
         <div class="achievement-rank rank-bronze">3rd</div>
-        <div><div class="achievement-name">Jakarta Pencak Silat Championship — Sparing Competition</div><div class="achievement-scope">Indonesia · 2019</div></div>
+        <div><div class="achievement-name">Elcofest UNESA — Technology Innovation Competition</div><div class="achievement-scope">National · 2023</div></div>
+      </a>
+      <a href="https://drive.google.com/file/d/1cxRfWbnwK2PwV1bI7ik-Xton1KqSNQVH/view?usp=sharing" target="_blank" class="achievement-item">
+        <div class="achievement-rank rank-bronze">3rd</div>
+        <div><div class="achievement-name">EWBC UNAIR — Business Model Canvas Competition</div><div class="achievement-scope">National · 2023</div></div>
       </a>
     </div>
   </div>
 
-  <!-- 08 PROJECTS -->
+  <!-- 08 CERTIFICATIONS -->
   <div class="section">
-    <div class="section-header"><span class="section-tag">Projects</span><div class="section-line"></div><span class="section-num">07</span></div>
+    <div class="section-header"><span class="section-tag">Certifications</span><div class="section-line"></div><span class="section-num">07</span></div>
+    <div class="cert-list">
+      <a href="https://drive.google.com/file/d/1jCUDE0fkqYsqls_iyKoTfEGjB5aG3VdD/view?usp=sharing" target="_blank" class="cert-item">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/>
+          </svg>
+        </div>
+        <div class="cert-content">
+          <div class="cert-name">TOEFL ITP</div>
+          <div class="cert-issuer">Educational Testing Service · 2024</div>
+          <div class="cert-detail">Score: 557 | Certificate ID: 14202335</div>
+        </div>
+      </a>
+      <a href="https://drive.google.com/file/d/1WJb8RGMmeAsAwFZNlc9-RNH9e9biUSYp/view?usp=sharing" target="_blank" class="cert-item">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <div class="cert-content">
+          <div class="cert-name">ISO 31000 — Risk Management</div>
+          <div class="cert-issuer">Phitagoras Training & Consulting · 2023</div>
+          <div class="cert-detail">Certificate ID: ISO09230117</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- 09 PROJECTS -->
+  <div class="section">
+    <div class="section-header"><span class="section-tag">Projects</span><div class="section-line"></div><span class="section-num">08</span></div>
     <div class="projects-grid">
       <a href="https://www.kaggle.com/datasets/zaafirrahman/arabica-beans" target="_blank" class="project-item">
         <div class="project-lang">Dataset · Kaggle</div><div class="project-name">Arabica Beans Quality Dataset</div><div class="project-year">2024</div>
@@ -444,9 +488,9 @@
     </div>
   </div>
 
-  <!-- 09 RESEARCH & WRITING -->
+  <!-- 10 RESEARCH & WRITING -->
   <div class="section">
-    <div class="section-header"><span class="section-tag">Research &amp; Writing</span><div class="section-line"></div><span class="section-num">08</span></div>
+    <div class="section-header"><span class="section-tag">Research &amp; Writing</span><div class="section-line"></div><span class="section-num">09</span></div>
     <div class="research-list">
       <a href="https://drive.google.com/file/d/1qw2GzvVHjpTAHKfMsFyGeTK70wEn12Ez/view?usp=sharing" target="_blank" class="research-item">
         <div class="research-year">2024</div>
