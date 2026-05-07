@@ -70,7 +70,8 @@
   .info-value a:hover { color:var(--accent); }
 
   /* SKILLS */
-  .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .skills-grid { display:grid; grid-template-columns:1fr; gap:10px; }
+  @media (min-width: 600px) { .skills-grid { grid-template-columns:repeat(2,1fr); } }
   .skill-group { background:var(--bg2); border:1px solid var(--border); border-radius:4px; padding:16px; }
   .skill-group-label { font-size:10px; color:var(--accent); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:10px; }
   .skill-tags { display:flex; flex-wrap:wrap; gap:6px; }
@@ -264,19 +265,25 @@
       <div class="skill-group">
         <div class="skill-group-label">Languages</div>
         <div class="skill-tags">
-          <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">HTML/CSS</span><span class="skill-tag">JavaScript</span><span class="skill-tag">R</span><span class="skill-tag">PHP</span>
+          <span class="skill-tag">Python</span><span class="skill-tag">JavaScript</span><span class="skill-tag">SQL</span><span class="skill-tag">HTML/CSS</span><span class="skill-tag">R</span><span class="skill-tag">PHP</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Frameworks & Web</div>
+        <div class="skill-tags">
+          <span class="skill-tag">React 19</span><span class="skill-tag">Vite</span><span class="skill-tag">Tailwind CSS</span><span class="skill-tag">shadcn/ui</span><span class="skill-tag">PWA</span><span class="skill-tag">WebAssembly</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="skill-group-label">Data &amp; ML</div>
         <div class="skill-tags">
-          <span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">PyTorch</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">ONNX</span><span class="skill-tag">SPSS</span>
+          <span class="skill-tag">PyTorch</span><span class="skill-tag">Transformers (ViT)</span><span class="skill-tag">ONNX</span><span class="skill-tag">Pandas</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">NumPy</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-label">Tools &amp; Platforms</div>
+        <div class="skill-group-label">Infrastructure &amp; Tools</div>
         <div class="skill-tags">
-          <span class="skill-tag">GitHub Pages</span><span class="skill-tag">HuggingFace</span><span class="skill-tag">Kaggle</span><span class="skill-tag">PyPI</span><span class="skill-tag">Arduino</span><span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Supabase</span><span class="skill-tag">Cloudflare Pages</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Git</span><span class="skill-tag">HuggingFace</span><span class="skill-tag">Kaggle</span>
         </div>
       </div>
     </div>
@@ -316,6 +323,22 @@
           <a href="s1_thesis.html" target="_blank" class="featured-link">Thesis Hub ↗</a>
           <!-- <a href="https://huggingface.co/zaafirrahman/coffeebean-quality-vit" target="_blank" class="featured-link">HuggingFace ↗</a>
           <a href="https://www.kaggle.com/datasets/zaafirrahman/arabica-beans" target="_blank" class="featured-link">Dataset ↗</a> -->
+        </div>
+      </div>
+      <div class="featured-project secondary">
+        <div class="featured-label">Healthcare System · 2026</div>
+        <div class="featured-name">Klinik Sehat Management System</div>
+        <div class="featured-desc">A full-stack clinic management ecosystem (for my father's business) built with a "Zero-Cost Infrastructure" philosophy. Features a professional patient portal, automated financial reporting, medical record management, and instant PDF generation for lab results and invoices. Built to scale for small-to-medium medical practices with encrypted database security via RLS.</div>
+        <div class="featured-stats">
+          <div class="fstat"><span class="fstat-val">React 19</span><span class="fstat-lbl">Latest Tech</span></div>
+          <div class="fstat"><span class="fstat-val">Supabase</span><span class="fstat-lbl">Backend-as-Service</span></div>
+          <div class="fstat"><span class="fstat-val">Zero</span><span class="fstat-lbl">Infra Cost</span></div>
+          <div class="fstat"><span class="fstat-val">Cloudflare</span><span class="fstat-lbl">Serverless pages</span></div>
+          <div class="fstat"><span class="fstat-val">PWA</span><span class="fstat-lbl">Native Feel</span></div>
+        </div>
+        <div class="featured-links">
+          <a href="https://klinikbekamsehat.pages.dev" target="_blank" class="featured-link">Live System →</a>
+          <a href="https://github.com/zaafirrahman/klinik-bekam-sehat" target="_blank" class="featured-link">GitHub ↗</a>
         </div>
       </div>
       <div class="featured-project secondary">
